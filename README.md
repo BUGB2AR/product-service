@@ -58,6 +58,10 @@ mvn clean package</code></pre>
 <h3>Passo 3: Executar o Microsserviço</h3>
 <pre><code>mvn spring-boot:run</code></pre>
 
+
+<h3>Passo 4: Executar testes Junit</h3>
+<pre><code>basta rodar na ide do Intellij o Runner de testes em Run tests Java</code></pre>
+
 <h2>Endpoints da API</h2>
 
 <h3>Serviço de Produtos (<code>product-service</code>)</h3>
