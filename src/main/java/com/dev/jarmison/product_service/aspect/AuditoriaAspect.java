@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,7 +17,8 @@ import org.springframework.web.client.RestTemplate;
 public class AuditoriaAspect {
     private static final Logger log = LoggerFactory.getLogger(AuditoriaAspect.class);
     private final RestTemplate restTemplate = new RestTemplate();
-    private final String urlAuditoria = "http://localhost:8081/api/auditoria";
+    @Value("${auditoria.service.url}")
+    private String urlAuditoria;
 
     @Pointcut("execution(* com.dev.jarmison.product_service.service.ProdutoService.criarProduto(..))")
     public void criarProdutoPointcut() {}
